@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RansomGuard — Ransomware Detection System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css"/>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="scanline"></div>
+
+  <header>
+    <div class="logo-wrap">
+      <div class="logo-icon">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 2L4 10V20C4 29.4 11.1 38.2 20 40C28.9 38.2 36 29.4 36 20V10L20 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M14 20L18 24L26 16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div>
+        <h1>RansomGuard</h1>
+        <span class="tagline">AI-Powered Ransomware Detection System</span>
+      </div>
+    </div>
+    <div class="status-pill"><span class="dot"></span> System Active</div>
+  </header>
+
+  <main>
+    <section class="card upload-card" id="uploadSection">
+      <div class="card-header">
+        <span class="card-title">FILE SCANNER</span>
+        <span class="card-badge">STATIC ANALYSIS</span>
+      </div>
+      <div class="drop-zone" id="dropZone">
+        <div class="drop-icon">
+          <svg viewBox="0 0 64 64" fill="none">
+            <rect x="8" y="8" width="48" height="56" rx="4" stroke="currentColor" stroke-width="2"/>
+            <path d="M32 24V44M32 44L24 36M32 44L40 36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="drop-text">Drag & drop any file here</p>
+        <p class="drop-sub">or</p>
+        <label class="browse-btn" for="fileInput">Browse File</label>
+        <input type="file" id="fileInput" hidden/>
+        <p class="drop-info">All file types accepted · Max 32 MB · File is never executed</p>
+      </div>
+      <div class="file-preview" id="filePreview" style="display:none;">
+        <div class="file-info">
+          <div class="file-icon">📄</div>
+          <div>
+            <div class="file-name" id="fileName">—</div>
+            <div class="file-size" id="fileSize">—</div>
+          </div>
+          <button class="remove-btn" id="removeFile">✕</button>
+        </div>
+      </div>
+      <button class="scan-btn" id="scanBtn" disabled>
+        <span class="scan-btn-text">SELECT A FILE TO SCAN</span>
+        <span class="scan-loader" style="display:none;">
+          <span class="spinner"></span> SCANNING...
+        </span>
+      </button>
+    </section>
+
+    <section class="card results-card" id="resultsCard" style="display:none;">
+      <div class="card-header">
+        <span class="card-title">ANALYSIS REPORT</span>
+        <span class="result-filename" id="resultFilename"></span>
+      </div>
+      <div class="verdict-banner" id="verdictBanner">
+        <div class="verdict-icon" id="verdictIcon"></div>
+        <div class="verdict-text">
+          <div class="verdict-label" id="verdictLabel">—</div>
+          <div class="verdict-sub" id="verdictSub">—</div>
+        </div>
+        <div class="confidence-ring">
+          <svg viewBox="0 0 80 80">
+            <circle class="ring-bg" cx="40" cy="40" r="34"/>
+            <circle class="ring-fg" id="ringFg" cx="40" cy="40" r="34"
+                    stroke-dasharray="213.6" stroke-dashoffset="213.6"/>
+          </svg>
+          <div class="ring-label">
+            <span id="confPct">0%</span><small>confidence</small>
+          </div>
+        </div>
+      </div>
+      <div class="risk-section">
+        <div class="risk-label">
+          <span>Risk Score</span><span id="riskValue">0 / 100</span>
+        </div>
+        <div class="risk-bar-wrap">
+          <div class="risk-bar" id="riskBar"></div>
+          <div class="risk-zones"><span>LOW</span><span>MEDIUM</span><span>HIGH</span></div>
+        </div>
+      </div>
+      <div class="details-grid">
+        <div class="details-box">
+          <h3>FILE DETAILS</h3>
+          <table class="detail-table" id="detailTable"></table>
+        </div>
+        <div class="details-box">
+          <h3>DETECTION REASONS</h3>
+          <ul class="reason-list" id="reasonList"></ul>
+        </div>
+      </div>
+      <div class="tips-box" id="tipsBox">
+        <h3>PREVENTION TIPS</h3>
+        <ul id="tipsList"></ul>
+      </div>
+      <button class="scan-again-btn" id="scanAgainBtn">↩ Scan Another File</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>RansomGuard uses static analysis only — uploaded files are <strong>never executed</strong>.</p>
+    <p>Final Year Mini Project · Machine Learning (Random Forest) · Flask</p>
+  </footer>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
