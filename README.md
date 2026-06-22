@@ -272,10 +272,9 @@ python train_model.py
 
 ## 👨‍💻 Author
 
-**[Your Name]**  
+SABARI S
 B.Tech — Computer Science & Engineering  
-[Your Institute Name], [Year]  
-Project Guide: [Guide's Name]
+dr ngp institute of technology 2025-2026
 
 ---
 
@@ -287,7 +286,7 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ## ⚠️ Disclaimer
 
-This tool is built for **educational and research purposes only** as part of an academic final year project. Do not use it to scan files on production systems without proper security review. Never execute or open files flagged as malicious.
+This tool is built for **educational and research purposes only** "built as a personal learning project.". Do not use it to scan files on production systems without proper security review. Never execute or open files flagged as malicious.
 
 ---
 
