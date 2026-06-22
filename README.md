@@ -290,4 +290,4 @@ This tool is built for **educational and research purposes only** "built as a pe
 
 ---
 
-<p align="center">Built with ❤️ for IIT Final Year Project — Ransomware Detection using Machine Learning</p>
+<p align="center">Built with ❤️as a personal learning project. — Ransomware Detection using Machine Learning</p>
